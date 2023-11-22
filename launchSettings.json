@@ -1,0 +1,25 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "coffeeshop": "StartDebugging",
+        "coffeeshopfront": "StartDebugging",
+        "coffee-sql": "StartWithoutDebugging"
+      }
+    },
+    "CustomDocker": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "coffeeshopfront",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
+      "serviceActions": {
+        "coffeeshop": "DoNotStart",
+        "coffeeshopfront": "StartDebugging",
+        "coffee-sql": "DoNotStart"
+      }
+    }
+  }
+}

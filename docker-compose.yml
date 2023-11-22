@@ -1,0 +1,54 @@
+version: '3.4'
+
+name: "composecoffee"
+services:  
+  coffeeshop:
+    container_name: CoffeeAPI
+    image: ${DOCKER_REGISTRY-}coffeeshop
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:80
+    build:
+      context: .
+      dockerfile: CoffeeShop/Dockerfile
+    ports:
+    - "6001:80"
+    networks:
+      - coffeenet
+  
+  coffeeshopfront:
+    container_name: CoffeeFront
+    image: ${DOCKER_REGISTRY-}coffeeshopfront
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://*:80
+    build:
+      context: .
+      dockerfile: CoffeeShopFront/Dockerfile
+    ports:
+        - "6002:80"    
+    networks:
+    - coffeenet    
+  
+
+  coffee-sql:
+    container_name: CoffeeSQL
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    user: root
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123
+    ports:
+    - "1555:1433" 
+    networks:
+    - coffeenet
+    volumes:
+    - coffeeSQL-data:/var/opt/mssql/data
+
+volumes:
+  coffeeSQL-data:
+    driver: local
+networks:
+  coffeenet:
+
+
