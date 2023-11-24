@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Data.Migrations
 {
     [DbContext(typeof(CoffeeShopDbContext))]
-    [Migration("20231119123806_seed-data")]
-    partial class seeddata
+    [Migration("20231124104205_update-data-seed")]
+    partial class updatedataseed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,37 +45,79 @@ namespace DAL.Data.Migrations
                         new
                         {
                             CoffeeId = 1,
-                            ImageUrl = "https://example.com/image1.jpg",
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
                             Name = "Coffee 1",
                             Price = 5.99m
                         },
                         new
                         {
                             CoffeeId = 2,
-                            ImageUrl = "https://example.com/image2.jpg",
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
                             Name = "Coffee 2",
                             Price = 6.99m
                         },
                         new
                         {
                             CoffeeId = 3,
-                            ImageUrl = "https://example.com/image3.jpg",
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
                             Name = "Coffee 3",
                             Price = 7.99m
                         },
                         new
                         {
                             CoffeeId = 4,
-                            ImageUrl = "https://example.com/image4.jpg",
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
                             Name = "Coffee 4",
                             Price = 8.99m
                         },
                         new
                         {
                             CoffeeId = 5,
-                            ImageUrl = "https://example.com/image5.jpg",
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
                             Name = "Coffee 5",
                             Price = 9.99m
+                        },
+                        new
+                        {
+                            CoffeeId = 6,
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
+                            Name = "Coffee 6",
+                            Price = 10.99m
+                        },
+                        new
+                        {
+                            CoffeeId = 7,
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
+                            Name = "Coffee 7",
+                            Price = 11.99m
+                        },
+                        new
+                        {
+                            CoffeeId = 8,
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
+                            Name = "Coffee 8",
+                            Price = 12.99m
+                        },
+                        new
+                        {
+                            CoffeeId = 9,
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
+                            Name = "Coffee 9",
+                            Price = 13.99m
+                        },
+                        new
+                        {
+                            CoffeeId = 10,
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
+                            Name = "Coffee 10",
+                            Price = 14.99m
+                        },
+                        new
+                        {
+                            CoffeeId = 11,
+                            ImageUrl = "https://i.ibb.co/T45P0Kh/360-F-116619399-YA611b-KNOW35ff-K0-Oiyua-Ocj-Ag-Xg-KBui.jpg",
+                            Name = "Coffee 11",
+                            Price = 15.99m
                         });
                 });
 

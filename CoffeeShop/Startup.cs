@@ -49,7 +49,7 @@ namespace CoffeeShop
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CoffeeShop", Version = "v1" });
             });
             services.AddDbContext<CoffeeShopDbContext>(
-               //options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")) // DockerConnection
+                //options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")) // DockerConnection
                 options => options.UseSqlServer(Configuration.GetConnectionString("DockerConnection")) // DockerConnection
                 );
             services.AddIdentity<IdentityUser, IdentityRole>()

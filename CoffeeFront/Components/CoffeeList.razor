@@ -1,0 +1,21 @@
+﻿<h3>CoffeeList</h3>
+
+<MudContainer>
+    <MudGrid>
+        @if(Coffees != null)
+        {
+            @foreach (var coffee in Coffees)
+            {
+                <CoffeeItem coffee="coffee"></CoffeeItem>
+            }
+        }
+       
+      
+    </MudGrid>
+</MudContainer>
+
+
+@code {
+    [Parameter]
+    public List<CoffeeModel> Coffees { get;set; }
+}

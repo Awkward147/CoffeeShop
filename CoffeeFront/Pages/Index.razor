@@ -1,0 +1,43 @@
+﻿@page "/"
+@inject ApiInterface apiinterface
+
+@if (!String.IsNullOrEmpty(ErrorMsg))
+{
+    <p>@ErrorMsg</p>
+}
+else
+{
+    <CoffeeList Coffees="coffees"></CoffeeList>
+}
+
+
+@code{
+    private List<CoffeeModel> coffees;
+    private string ErrorMsg = "";
+    protected override async Task OnParametersSetAsync()
+    {
+        await GetCoffees();
+       
+    }
+
+
+    private async Task GetCoffees()
+    {
+        try
+        {
+            var result = await apiinterface.GetCoffees();
+            if(result.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                coffees = result.Content ?? new List<CoffeeModel>();
+            }
+            else
+            {
+                ErrorMsg = "Failed to get coffees";
+            }
+        }
+        catch(Exception e)
+        {
+            ErrorMsg = e.Message;
+        }
+    }
+}

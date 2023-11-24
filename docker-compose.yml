@@ -18,13 +18,13 @@ services:
   
   coffeeshopfront:
     container_name: CoffeeFront
-    image: ${DOCKER_REGISTRY-}coffeeshopfront
+    image: ${DOCKER_REGISTRY-}coffeefront
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://*:80
     build:
       context: .
-      dockerfile: CoffeeShopFront/Dockerfile
+      dockerfile: CoffeeFront/Dockerfile
     ports:
         - "6002:80"    
     networks:
